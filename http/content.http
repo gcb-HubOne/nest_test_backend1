@@ -1,0 +1,29 @@
+
+### 获取所有内容
+GET http://localhost:3000/content
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE2MzE0OTIsImV4cCI6MTc1MTcxNzg5Mn0.ty_Chup7x7StF18hJLNWS92bCUW2LAr8kXhYBHSCl88
+### 获取单个内容
+GET http://localhost:3000/content/1
+
+### 创建内容
+POST http://localhost:3000/content
+Content-Type: application/json
+
+{
+    "text": "正文内容",
+    "image": "http://example.com/image.png",
+    "code": "console.log('hello')",
+    "table": [{"col1": "a", "col2": "b"}],
+    "file": "http://example.com/file.zip"
+}
+
+### 更新内容
+PUT http://localhost:3000/content/1
+Content-Type: application/json
+
+{
+    "text": "新正文内容"
+}
+
+### 删除内容
+DELETE http://localhost:3000/content/1

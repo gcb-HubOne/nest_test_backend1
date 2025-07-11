@@ -1,0 +1,33 @@
+### 创建个人介绍
+POST http://localhost:3000/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE2MzE0OTIsImV4cCI6MTc1MTcxNzg5Mn0.ty_Chup7x7StF18hJLNWS92bCUW2LAr8kXhYBHSCl88
+
+{
+  "name": "张三",
+  "email": "zhangsan@example.com",
+  "weixin": "weixin123",
+  "desc_per": "全栈开发者，热爱技术。",
+  "work_exhibition": "https://img.example.com/1.png|项目描述1;https://img.example.com/2.png|项目描述2"
+}
+
+### 获取个人介绍
+GET http://localhost:3000/profile
+
+### 更新个人介绍
+PUT http://localhost:3000/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE2MzE0OTIsImV4cCI6MTc1MTcxNzg5Mn0.ty_Chup7x7StF18hJLNWS92bCUW2LAr8kXhYBHSCl88
+
+{
+  "name": "李四",
+  "email": "lisi@example.com",
+  "weixin": "weixin456",
+  "desc_per": "前端开发者，热爱设计。",
+  "work_exhibition": "https://img.example.com/3.png|项目描述3"
+}
+
+### 删除个人介绍
+DELETE http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE2MzE0OTIsImV4cCI6MTc1MTcxNzg5Mn0.ty_Chup7x7StF18hJLNWS92bCUW2LAr8kXhYBHSCl88
+

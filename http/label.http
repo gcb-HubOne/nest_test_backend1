@@ -1,0 +1,25 @@
+### 获取所有标签
+GET http://localhost:3000/label
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsInVzZXJuYW1lIjoiemhhbmdzYW4iLCJpYXQiOjE3NTE5NTE0NTUsImV4cCI6MTc1MjAzNzg1NX0.ZAY85SU6DhcRtdRNkRlj8tydGL1DiDF-4jdsa-ICPLw
+
+### 获取单个标签
+GET http://localhost:3000/label/3
+
+### 创建标签
+POST http://localhost:3000/label
+Content-Type: application/json
+
+{
+    "name": "文明"
+}
+
+### 更新标签
+PUT http://localhost:3000/label/1
+Content-Type: application/json
+
+{
+    "name": "生活"
+}
+
+### 删除标签
+DELETE http://localhost:3000/label/1

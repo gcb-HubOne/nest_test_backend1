@@ -1,0 +1,75 @@
+### 注册
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "testuser1",
+  "password": "123456",
+  "code": "1234"
+}
+
+### 登录
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "username": "zhangsan",
+  "password": "zs1234"
+}
+
+### 查询所有用户
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsInVzZXJuYW1lIjoiemhhbmdzYW4iLCJpYXQiOjE3NTE5NTE0NTUsImV4cCI6MTc1MjAzNzg1NX0.ZAY85SU6DhcRtdRNkRlj8tydGL1DiDF-4jdsa-ICPLw
+### 查询单个用户
+GET http://localhost:3000/users/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+### 修改用户密码
+PUT http://localhost:3000/users/password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+{
+  "oldPassword": "newpassword123",
+  "newPassword": "123456"
+}
+
+### 修改用户昵称（当前登录用户）
+PUT http://localhost:3000/users/nickname
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+{
+  "nickname": "新昵称"
+}
+
+### 修改指定用户昵称（通过ID）
+PUT http://localhost:3000/users/6/nickname
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+{
+  "nickname": "指定用户的新昵称"
+}
+
+### 删除用户
+DELETE http://localhost:3000/users/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+### 修改注册码
+PUT http://localhost:3000/register-code
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+{
+  "oldCode": "123456",
+  "newCode": "1234"
+}
+
+### 直接重置用户密码 (不需要验证旧密码)
+PUT http://localhost:3000/users/reset-password/testuser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NTE4NzYyODgsImV4cCI6MTc1MTk2MjY4OH0.2mwKXQD6PD_UDQNMh321kP2cxKkkLOoH6WN_RDQXUiU
+
+{
+  "newPassword": "test123"
+}

@@ -1,0 +1,45 @@
+### 获取所有文章
+GET http://localhost:3000/article
+
+### 测试模糊查询
+GET http://localhost:3000/article?title=test&label=技术&startDate=2025-01-01&endDate=2025-12-31
+
+### 获取单个文章
+GET http://localhost:3000/article/10
+
+### 创建文章
+POST http://localhost:3000/article
+Content-Type: application/json
+
+{
+  "title": "test",
+  "label": { "name": "科技" },
+  "content": {
+    "text": "正文内容",
+    "image": "http://example.com/image.png",
+    "code": "console.log('hello')",
+    "table": [{"col1": "a", "col2": "b"}],
+    "file": "http://example.com/file.zip"
+  }
+}
+
+### 更新文章
+PUT http://localhost:3000/article/3
+Content-Type: application/json
+
+{
+  "title": "test",
+  "label": { "name": "技术" },
+  "content": {
+    "text": "正文内容1122",
+    "image": "http://example.com/image.png",
+    "code": "console.log('hello')",
+    "table": [{"col1": "a", "col2": "b"}],
+    "file": "http://example.com/file.zip"
+  }
+}
+
+### 删除文章
+DELETE http://localhost:3000/article/2
+
+

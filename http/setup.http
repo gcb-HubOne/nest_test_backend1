@@ -1,0 +1,18 @@
+### 初始化测试用户
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456",
+  "code": "gcb941015"
+}
+
+### 获取测试用户的token
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "123456"
+} 
