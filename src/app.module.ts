@@ -21,7 +21,7 @@ import { Profile } from './profile/profile.entity';
       useFactory: (config: ConfigService) => ({
         type: 'mysql',
         host: config.get<string>('MYSQLHOST'),
-        port: +config.get<number>('MYSQLPORT'),
+        port: +config.get<number>('MYSQLPORT',3306),
         username: config.get<string>('MYSQLUSER'),
         password: config.get<string>('MYSQLPASSWORD'),
         database: config.get<string>('MYSQLDATABASE'),
